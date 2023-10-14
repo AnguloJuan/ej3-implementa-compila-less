@@ -49,5 +49,31 @@ form button {
   transition: 0.3s;
 }
 form button:hover {
-  background-color: #191e47;
+  background-color: rgba(21, 30, 92, 0.8);
+}
+form button:active {
+  background-color: rgba(21, 30, 92, 0.6);
+}
+form .box-checkbox {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2f2c3b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-top: 8px;
+}
+form .check {
+  display: flex;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: baseline;
+}
+form .check label {
+  margin-left: 8px;
 }
