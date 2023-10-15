@@ -1,4 +1,5 @@
 @primaryColor: rgb(47, 44, 59);
+@colors: #f44336, #9c27b0, #795548, #9e9e9e;
 
 //mixins.less
 .form-content() {
@@ -9,6 +10,13 @@
     border: none;
     background-color: @primaryColor;
     color: white;
+}
+
+.color-check(@index) when (@index > 0) {
+    .color-check(@index - 1);
+    .item-@{index} {
+        background-color: extract(@colors, @index);
+    }
 }
 
 *{
@@ -71,11 +79,16 @@ form{
 
     .check{
         display: flex;
+        width: 100%;
         margin-top: 8px;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: baseline;
+        input[type="checkbox"]{
+            width: fit-content;
+        }
         label{
             margin-left: 8px;
         }
     }
+    .color-check(length(@colors));
 }
